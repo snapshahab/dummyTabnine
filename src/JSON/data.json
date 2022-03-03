@@ -1,0 +1,82 @@
+[
+    {
+        "tag": [
+            "js",
+            "javascript",
+            "fetch"
+        ],
+        "code": "function fetchUserInfo(userId) {\nreturn fetch(`https://api.github.com/users/${encodeURIComponent(userId)}`)\n.then(response => {\nif (!response.ok) {\nreturn Promise.reject(new Error(`${response.status}: ${response.statusText}`));\n} else {\nreturn response.json();\n}\n});\n}",
+        "filePath": "source/use-case/ajaxapp/promise/src/index.js/fetchUserInfo",
+        "fileLink": "https://github.com/asciidwango/js-primer/blob/b3a6c52573fdbc8a45601bd85a3fa46d578977af/source/use-case/ajaxapp/promise/src/index.js#L12"
+    },
+    {
+        "tag": [
+            "js",
+            "javascript",
+            "fetch"
+        ],
+        "code": "static async getInitialProps({ req }){\nconst res = await fetch('https://api.github.com/repos/facebook/react')\nconst json = await res.json()\nreturn {stars: json.stargazers_count}\n}",
+        "filePath": "examples/react-fetch/index.jsx/GithubStars/getInitialProps",
+        "fileLink": "https://github.com/remoteinterview/zero/tree/e6a72ee49e03008a64c86ee5c34e2120a3b52908/examples/react-fetch/index.jsx#L3"
+    },
+    {
+        "tag": [
+            "js",
+            "javascript",
+            "fetch"
+        ],
+        "code": "function removeSubscriptionFromServer(endpoint) {\nconst encodedKey = btoa(String.fromCharCode.apply(null, new Uint8Array(key)));\nconst encodedAuth = btoa(String.fromCharCode.apply(null, new Uint8Array(auth)));\nfetch(schnack_host + '/unsubscribe', {\nmethod: 'POST',\nheaders: { 'Content-Type': 'application/json' },\nbody: JSON.stringify({ publicKey: encodedKey, auth: encodedAuth, endpoint })\n}).then(res => {\n// eslint-disable-next-line no-console\nconsole.log('Unsubscribed successfully! ' + JSON.stringify(res));\n});\n}",
+        "filePath": "src/embed/push.js/removeSubscriptionFromServer",
+        "fileLink": "https://github.com/schn4ck/schnack/tree/71feb6053d9f85385c507fe0166c72119e6bc7c6/src/embed/push.js#L131"
+    },
+    {
+        "tag": [
+            "js",
+            "javascript",
+            "fetch"
+        ],
+        "code": "function fetchUserInfo(userId) {\nreturn fetch(`https://api.github.com/users/${encodeURIComponent(userId)}`)\n.then(response => {\nif (!response.ok) {\nreturn Promise.reject(new Error(`${response.status}: ${response.statusText}`));\n} else {\nreturn response.json();\n}\n});\n}",
+        "filePath": "source/use-case/ajaxapp/promise/src/index.js/fetchUserInfo",
+        "fileLink": "https://github.com/asciidwango/js-primer/blob/b3a6c52573fdbc8a45601bd85a3fa46d578977af/source/use-case/ajaxapp/promise/src/index.js#L12"
+    },
+    {
+        "tag": [
+            "js",
+            "javascript",
+            "get"
+        ],
+        "code": "it('calls all intercept handlers', async function() {\nconst { server } = this.polly;\nserver.any() intercept(async (_, res) => {\nawait server.timeout(5);\nres.status(200);\n});\nserver.any().intercept(async (_, res) => {\nawait server.timeout(5);\nres.setHeader('x-foo', 'bar');\n});\nserver.get('/ping').intercept((_, res) => res.json({ foo: 'bar' }));\nconst res = await fetch('/ping');\nconst json = await res.json();\nexpect(res.status).to.equal(200);\nexpect(res.headers.get('x-foo')).to.equal('bar');\nexpect(json).to.deep.equal({ foo: 'bar' });});",
+        "filePath": "tests/integration/server-test.js/it",
+        "fileLink": "https://github.com\netflix/pollyjs/tree/c4648ffeea9b0cd0647f5271bbb22406e1bed757/packages/@pollyjs/adapter-fetch/tests/integration/server-test.js#L9"
+    },
+    {
+        "tag": [
+            "js",
+            "javascript",
+            "setTimeout"
+        ],
+        "code": "scheduleRefresh( props ) {\nif ( ! this.shouldRefresh( props ) ) {\nreturn;\n}\n// Request a refresh one second before the current lock expires\nthis._refresh = setTimeout( () => {\nthis._refresh = null;\nthis.requestLock( props );\n}, props.expires - new Date().getTime() - 1000 );\n}",
+        "filePath": "components/data/zone-lock/index.jsx/ZoneLock/scheduleRefresh",
+        "fileLink": "https://github.com/Automattic/wp-calypso/tree/c4d1744cc1e155c6993038fee23bd57af86295bd/client/extensions/zoninator/components/data/zone-lock/index.jsx#L57"
+    },
+    {
+        "tag": [
+            "js",
+            "javascript",
+            "setTimeout"
+        ],
+        "code": "event.dispatcher.on(event.step.after, (step) => {\nif (config.methods.indexOf(step.helperMethod) < 0) return; // skip non-actions\nrecorder.add('auto-delay', async () => {\nif (store.debugMode) return; // no need to delay in debug\nlog(`Delaying for ${config.delayAfter}ms`);\nreturn new Promise((resolve) => {\nsetTimeout(resolve, config.delayAfter);\n});\n});\n});",
+        "filePath": "lib/plugin/autoDelay.js/event.dispatcher.on",
+        "fileLink": "https://github.com/codeceptjs/CodeceptJS/tree/22f28d62df741a9dbf0e9b2e35d27d0dcbc98024/lib/plugin/autoDelay.js#L88"
+    },
+    {
+        "tag": [
+            "js",
+            "javascript",
+            "useState"
+        ],
+        "code": "let [data, setData] = useState(null);\nasync function somethingAsync() {\nlet response = await fetch(url);",
+        "filePath": "act-examples.test.js/it",
+        "fileLink": "https://github.com/threepointone/react-act-examples/blob/06d382801a9de840cbc6ec18023206705106a354/act-examples.test.js#L130"
+    }
+]
